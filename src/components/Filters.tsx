@@ -101,15 +101,15 @@ export const Filters: React.FC<FiltersProps> = ({
     const desktopFilters = (
         <div className="hidden md:flex flex-row gap-2 items-center w-full mb-2">
             {filterControls}
-         
-             
-                <button
-                    onClick={copyLink}
-                    className="px-4 py-2 text-sm font-medium text-primary-500 border border-primary-200 rounded hover:bg-accent-50 focus:ring-1 focus:ring-primary-300 min-h-[44px] shrink-0 mt-7"
-                >
-                    Copy Link
-                </button>
-          
+
+
+            <button
+                onClick={copyLink}
+                className="px-4 py-2 text-sm font-medium text-primary-500 border border-primary-200 rounded hover:bg-accent-50 focus:ring-1 focus:ring-primary-300 min-h-[44px] shrink-0 mt-7"
+            >
+                Copy Link
+            </button>
+
         </div>
     );
 
@@ -127,7 +127,7 @@ export const Filters: React.FC<FiltersProps> = ({
                     Filters
                     {hasActiveFilters && (
                         <span className="bg-white text-primary-500 text-xs rounded-full px-2 py-0.5 ml-1">
-                            {search ? '1' : ''}{status ? '1' : ''}{priority ? '1' : ''}
+                            {(search ? 1 : 0) + (status ? 1 : 0) + (priority ? 1 : 0)}
                         </span>
                     )}
                 </button>
@@ -140,7 +140,7 @@ export const Filters: React.FC<FiltersProps> = ({
             </div>
 
             {hasActiveFilters && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-2">
                     {search && (
                         <span className="inline-flex items-center px-3 py-1 text-sm bg-primary-100 text-primary-700 rounded-full">
                             Search: {search}
